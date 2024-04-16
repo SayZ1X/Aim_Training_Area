@@ -23,7 +23,7 @@ void ATrigger_Spawner::On_Overlap_Begin(AActor* overlapped_actor, AActor* other_
 	{
 		Is_Active = true;
 		FString active_state = Is_Active ? TEXT("True") : TEXT("False");
-		UE_LOG(LogTemp, Warning, TEXT("[%S] >>>>> Button state is \"%S\""), __FUNCTION__, *active_state);
+		UE_LOG(LogTemp, Warning, TEXT("[%S] >>>>> Button state is \"%s\""), __FUNCTION__, *active_state);
 
 		if (Is_Active)
 		{
@@ -46,7 +46,7 @@ void ATrigger_Spawner::On_Overlap_End(AActor* overlapped_actor, AActor* other_ac
 	{
 		Is_Active = false;
 		FString active_state = Is_Active ? TEXT("True") : TEXT("False");
-		UE_LOG(LogTemp, Warning, TEXT("[%S] >>>>> Button state is \"%S\""), __FUNCTION__, *active_state);
+		UE_LOG(LogTemp, Warning, TEXT("[%S] >>>>> Button state is \"%s\""), __FUNCTION__, *active_state);
 	}
 }
 //------------------------------------------------------------------------------------------------------------

@@ -58,7 +58,9 @@ void AWeapon::Fire(AStalker_Character* character)
 	if (character == 0 || character->GetController() == 0)
 		return;
 
-	FVector start_loc = BP_Weapon_Mesh_Component->GetSocketLocation("MuzzleFlash");
+	//FVector start_loc = BP_Weapon_Mesh_Component->GetSocketLocation("MuzzleFlash");  // луч будет начинаться с сокета в пушке который принадлежит дулу
+
+	FVector start_loc = character->FindCameraComponent(character)->GetComponentLocation();  // луч будет начинаться с ценра экрана
 	FVector end_loc = start_loc + character->FindCameraComponent(character)->GetForwardVector() * FireRange;
 
 	DrawDebugLine(GetWorld(), start_loc, end_loc, FColor::Red, false, 0.1f, 0, 1.0f);
